@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BreedController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/breed/{id}/image', [BreedController::class, 'getBreedImage']);
 Route::get('breed/random', [BreedController::class, 'random']);
 Route::resource('breed', BreedController::class);
+
+Route::post('/user/{id}/associate', [UserController::class, 'associate']);
